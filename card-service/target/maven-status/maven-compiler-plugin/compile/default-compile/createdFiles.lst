@@ -1,0 +1,7 @@
+com\marketplace\card\model\Card.class
+com\marketplace\card\kafka\PurchaseConsumer.class
+com\marketplace\card\repository\CardRepository.class
+com\marketplace\card\filter\CorrelationFilter.class
+com\marketplace\card\CardServiceApplication.class
+com\marketplace\card\event\CompraRealizadaEvent.class
+com\marketplace\card\controller\CardController.class

@@ -1,0 +1,43 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: card-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/card_db
+  
+  # Configuração do Kafka Consumer
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: card-service-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+        # Bug #3 fix: Mapeamento de tipos — o Producer envia com o tipo
+        # com.marketplace.trade.event.CompraRealizadaEvent, mas no classpath do
+        # card-service a classe equivalente é com.marketplace.card.event.CompraRealizadaEvent.
+        # Sem esse mapeamento, a desserialização falha com ClassNotFoundException.
+        spring.json.type.mapping: "com.marketplace.trade.event.CompraRealizadaEvent:com.marketplace.card.event.CompraRealizadaEvent"
+      # Garantir idempotência: Se o consumer receber a mesma mensagem duas vezes,
+      # o recálculo de preço será reaplicado (comportamento aceitável para média móvel simples).
+      # Em produção, adicionaríamos um campo de idempotency key.
+      auto-offset-reset: earliest
+
+# Exposição do Actuator e Prometheus para Observabilidade (Métricas)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,metrics
+  endpoint:
+    health:
+      show-details: always
+
+# Padrão de logs contendo o Correlation ID para Correlação e Rastreamento
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [card-service,correlationId=%X{correlationId}] %logger{36} - %msg%n"

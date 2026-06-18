@@ -1,0 +1,11 @@
+com\marketplace\trade\repository\ListingRepository.class
+com\marketplace\trade\TradeServiceApplication.class
+com\marketplace\trade\dto\CardDto.class
+com\marketplace\trade\filter\CorrelationFilter.class
+com\marketplace\trade\controller\TradeController.class
+com\marketplace\trade\model\CardListing.class
+com\marketplace\trade\dto\ListingDetailsDto.class
+com\marketplace\trade\event\CompraRealizadaEvent.class
+com\marketplace\trade\config\RestTemplateInterceptor.class
+com\marketplace\trade\client\CardClient.class
+com\marketplace\trade\kafka\PurchaseProducer.class

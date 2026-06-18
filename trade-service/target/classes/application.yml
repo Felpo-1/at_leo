@@ -1,0 +1,59 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: trade-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/trade_db
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+  
+  # Configuração do Kafka Producer
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        # Bug #2 fix: Configura o tipo padrão para serialização JSON. Sem isso,
+        # o KafkaTemplate pode não resolver corretamente o tipo genérico
+        # CompraRealizadaEvent na auto-configuração.
+        spring.json.add.type.headers: true
+
+# Configurações do Resilience4j Circuit Breaker
+resilience4j:
+  circuitbreaker:
+    instances:
+      cardServiceCB:
+        register-health-indicator: true
+        sliding-window-size: 5
+        minimum-number-of-calls: 3
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 2
+        automatic-transition-from-open-to-half-open-enabled: true
+
+# Exposição do Actuator e Prometheus para Observabilidade
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,prometheus,metrics
+  endpoint:
+    health:
+      show-details: always
+
+# Padrão de logs contendo o Correlation ID para rastreamento
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [trade-service,correlationId=%X{correlationId}] %logger{36} - %msg%n"

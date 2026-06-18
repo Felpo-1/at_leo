@@ -1,0 +1,7 @@
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\card-service\src\main\java\com\marketplace\card\CardServiceApplication.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\card-service\src\main\java\com\marketplace\card\controller\CardController.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\card-service\src\main\java\com\marketplace\card\event\CompraRealizadaEvent.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\card-service\src\main\java\com\marketplace\card\filter\CorrelationFilter.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\card-service\src\main\java\com\marketplace\card\kafka\PurchaseConsumer.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\card-service\src\main\java\com\marketplace\card\model\Card.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\card-service\src\main\java\com\marketplace\card\repository\CardRepository.java

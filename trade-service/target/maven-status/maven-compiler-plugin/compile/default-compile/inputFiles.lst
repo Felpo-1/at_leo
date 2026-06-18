@@ -1,0 +1,11 @@
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\trade-service\src\main\java\com\marketplace\trade\client\CardClient.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\trade-service\src\main\java\com\marketplace\trade\config\RestTemplateInterceptor.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\trade-service\src\main\java\com\marketplace\trade\controller\TradeController.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\trade-service\src\main\java\com\marketplace\trade\dto\CardDto.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\trade-service\src\main\java\com\marketplace\trade\dto\ListingDetailsDto.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\trade-service\src\main\java\com\marketplace\trade\event\CompraRealizadaEvent.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\trade-service\src\main\java\com\marketplace\trade\filter\CorrelationFilter.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\trade-service\src\main\java\com\marketplace\trade\kafka\PurchaseProducer.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\trade-service\src\main\java\com\marketplace\trade\model\CardListing.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\trade-service\src\main\java\com\marketplace\trade\repository\ListingRepository.java
+C:\Users\fspar\OneDrive\Área de Trabalho\at_leo\trade-service\src\main\java\com\marketplace\trade\TradeServiceApplication.java
