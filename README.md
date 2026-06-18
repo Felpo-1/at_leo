@@ -3,9 +3,8 @@
 Este repositório contém a segunda entrega do trabalho prático da disciplina, contendo uma arquitetura de microserviços em Spring Boot para um marketplace de cartas colecionáveis.
 
 ## Integrantes
-* **Leonardo Santos Silva** - RA: 22014589
-* **Lucas Oliveira Souza** - RA: 22017643
-* **Turma**: Segunda e Quarta - Noturno (Engenharia de Software)
+* **Felipe Paravidino Silveira** 
+* **Samuel Barbosa Silveira** 
 * **Tipo**: Dupla
 
 ---
